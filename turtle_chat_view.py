@@ -41,8 +41,13 @@ from turtle_chat_widgets import TextInput
 #####################################################################################
 class TextBox(TextInput):
     def draw_box(self):
-      turtle.clone(pen)
-      pen.goto
+      pen=turtle.clone()
+      pen.hideturtle()
+      pen.penup()
+      pen.goto(50,-75)
+      pen.pendown()
+      pebn.goto(-50,-75)
+      
     def write_msg(self):
         '''
         Method to write the message to the screen after every
