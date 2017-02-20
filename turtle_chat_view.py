@@ -41,26 +41,21 @@ from turtle_chat_widgets import TextInput
 #####################################################################################
 class TextBox(TextInput):
     def draw_box(self):
-      pen=turtle.clone()
-      pen.hideturtle()
-      pen.penup()
-      pen.goto(50,-75)
-      pen.pendown()
-      pebn.goto(-50,-75)
-      
+        turtle.clone(pen)
+        pen.penup()
+        pen.goto(75,-75)
+        pen.pendown()
+        pen.goto(-75,-75)
+        pen.goto(-75,0)
+        pen.goto(75,0)
+        pen.goto(75,-75)
+        pen.hideturtle()
+        
     def write_msg(self):
-        '''
-        Method to write the message to the screen after every
-        keypress.  Abstract method; must be implemented in
-        concrete classes.
-
-        Opportunity, also, to clean strings - add in newlines,
-        '\r', for example, when needed, etc.
-
-        Side effect method - no inputs or outputs, but
-        new_msg may be changed.
-        '''
-        pass
+        self.writer.penup()
+        self.writer.goto(-60,-15)
+        self.writer.clear()
+        self.writer.write(self.new_msg)
 #####################################################################################
 #                                  SendButton                                       #
 #####################################################################################
@@ -78,8 +73,11 @@ class TextBox(TextInput):
 #      you send messages and update message displays.
 #####################################################################################
 #####################################################################################
-
-
+class SendButton(Button):
+    def fun(self,x=None,y=None):
+        self.View.send_msg()
+        
+    def __itit__(self,View):
 ##################################################################
 #                             View                               #
 ##################################################################
