@@ -21,7 +21,7 @@ from turtle_chat_widgets import TextInput
 #methods.  There are two:
 #
 #draw_box
-#write_msg
+#write_msgs
 #
 #Hints:
 #1. in draw_box, you will draw (or stamp) the space on which the user's input
